@@ -1,0 +1,20 @@
+.navbar-rest{
+	background: rgba(17, 42, 81,1);
+}
+
+.nav-link{
+	color: white;
+}
+
+.navbar-brand{
+	color: white;
+}
+
+.form-container{
+	margin-top: 3vh;
+}
+
+.heading{
+	text-align: center;
+	margin-top: 5vh;
+}

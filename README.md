@@ -1,1 +1,0 @@
-# Loan-Predictor-Web-Application

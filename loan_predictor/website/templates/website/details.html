@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fill your details</title>
+	<link rel="stylesheet" href="{% static 'website/css/details.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-rest">
+             &nbsp; <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-chart-pie"></i>  Loan Predictor</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'details' %}">Predict</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  
+                  
+              </div>
+    </nav>
+    <h1 class="heading">Enter your details</h1>
+ 	<div class="container form-container">
+		<form action="details" method="post">
+		    {% csrf_token %}
+		    <div class="row">
+		    	<div class="col-lg-6">
+				    <div class="form-group">
+				    	<label for="RevolvingUtilizationOfUnsecuredLines">Total balance on credit cards and personal lines of credit expt r. estate and no installment debt ((car loans / (sum of credit limits)</label><br>
+				    	{{form.RevolvingUtilizationOfUnsecuredLines}}
+				    </div>
+				</div>
+				<div class="col-lg-6">
+				    <div class="form-group">
+				    	<label for="Age">Age of borrower in years</label><br>
+				    	{{form.Age}}
+				    </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="form-group">
+		    			<label for="NumberOfTime30to59DaysPastDueNotWorse">Number of times borrower has been 30-59 days past due but no worse in the last 2 years.</label><br>
+		    			{{form.NumberOfTime30to59DaysPastDueNotWorse}}
+		    		</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="form-group">
+		    			<label for="MonthlyIncome">Monthly Income</label><br>
+		    			{{form.MonthlyIncome}}
+		    		</div>
+				</div>
+			</div>
+		    
+		    
+		    <div class="row">
+		    	<div class="col-lg-6">
+		    		<div class="form-group">
+			    		<label for="NumberOfOpenCreditLinesAndLoans">Number of Open loans (installment like car loan or mortgage) and Lines of credit (e.g. credit cards)</label><br>
+			    		{{form.NumberOfOpenCreditLinesAndLoans}}
+			    	</div>
+		    	</div>
+			    <div class="col-lg-6">
+				    <div class="form-group">
+				    	<label for="NumberOfTimes90DaysLate">Number of times borrower has been 90 days or more past due.</label><br>
+				    	{{form.NumberOfTimes90DaysLate}}
+				    </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="form-group">
+		    			<label for="NumberRealEstateLoansOrLines">Number of mortgage and real estate loans including home equity lines of credit</label>
+		    			{{form.NumberRealEstateLoansOrLines}}
+		    		</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="form-group">
+		    			<label for="NumberOfTime60-89DaysPastDueNotWorse">Number of times borrower has been 60-89 days past due but no worse in the last 2 years.</label><br>
+		    			{{form.NumberOfTime60to89DaysPastDueNotWorse}}
+		    		</div>
+				</div>
+			</div>
+		    
+		   	<div class="row">
+		   		<div class="col-lg-6">
+		   			<div class="form-group">
+		    			<label for="NumberOfDependents">Number of dependents in family excluding themselves (spouse, children etc.)</label><br>
+
+		    			{{form.NumberOfDependents}}
+		    		</div>
+		   		</div>
+		   		<div class="col-lg-6">
+		   			<div class="form-group">
+		    			<label for="DebtRatio">Monthly debt payments, alimony,living costs divided by monthy gross income</label><br>
+
+		    			{{form.DebtRatio}}
+		    		</div>
+		   		</div>
+		   	</div>
+		    
+		    <input type="submit" value="Submit" />
+		</form>
+	</div>
+</body>
+</html>
+
+
