@@ -39,12 +39,14 @@
 		    	<div class="col-lg-6">
 				    <div class="form-group">
 				    	<label for="RevolvingUtilizationOfUnsecuredLines">Total balance on credit cards and personal lines of credit expt r. estate and no installment debt ((car loans / (sum of credit limits)</label><br>
-				    	{{form.RevolvingUtilizationOfUnsecuredLines}}
+				    	<div class="input-form">
+				    		{{form.RevolvingUtilizationOfUnsecuredLines}}
+				    	</div>
 				    </div>
 				</div>
 				<div class="col-lg-6">
 				    <div class="form-group">
-				    	<label for="Age">Age of borrower in years</label><br>
+				    	<label for="Age">Age of borrower in years</label><br><br>
 				    	{{form.Age}}
 				    </div>
 				</div>
@@ -58,7 +60,7 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group">
-		    			<label for="MonthlyIncome">Monthly Income</label><br>
+		    			<label for="MonthlyIncome">Monthly Income</label><br><br>
 		    			{{form.MonthlyIncome}}
 		    		</div>
 				</div>
@@ -74,7 +76,7 @@
 		    	</div>
 			    <div class="col-lg-6">
 				    <div class="form-group">
-				    	<label for="NumberOfTimes90DaysLate">Number of times borrower has been 90 days or more past due.</label><br>
+				    	<label for="NumberOfTimes90DaysLate">Number of times borrower has been 90 days or more past due.</label><br><br>
 				    	{{form.NumberOfTimes90DaysLate}}
 				    </div>
 				</div>
@@ -110,8 +112,9 @@
 		    		</div>
 		   		</div>
 		   	</div>
-		    
-		    <input type="submit" value="Submit" />
+		    <div class="submit-div">
+		    	<input type="submit" value="Submit" class="submit" />
+		    </div>
 		</form>
 	</div>
 </body>

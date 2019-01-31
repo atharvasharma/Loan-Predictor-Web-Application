@@ -25,7 +25,7 @@
 	height:30vh;
 	width:20vw;
 	opacity: 0.6;
-	position: relative;
+	position: relative !important;
 
 }
 
@@ -35,10 +35,12 @@
 .heading{
 	text-align: center;
 	color: white;
-	margin-top: 14vh;
-	
+	margin-top: 12vh;
+	position: relative !important;
+	z-index: 5;
 	opacity: 0.9;
 	font-size: 6vh;
+	transition: all .2s ease-in-out;
 }
 
 .flip-card {
@@ -51,7 +53,7 @@
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
-  position: relative;
+  position: relative !important;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -87,7 +89,7 @@
 }
 
 .row{
-	margin-top: 15vh;
+	margin-top: 12vh;
 }
 
 .column-1{
@@ -136,10 +138,57 @@ body{
 
 }
 .flip-card{
-
+	position: relative;
 	z-index: 5;
 }
 
 .heading:hover{
-	font-weight: bold;
+	-webkit-transform: scale(1.1); 
+}
+
+.get-started{
+	text-align: center !important;
+	margin-top: 8vh;
+
+}
+
+button{
+	z-index: 5;
+	position: relative;
+	font-size: 2.5vh !important;
+	letter-spacing: 1px;
+	font-weight: bold !important; 
+	border-radius: 10px !important;
+	background:rgba(255,255,255,0.9) !important;
+	color: rgba(0,0,0,0.9) !important;
+	
+}
+
+button:hover{
+	background:rgba(255,255,255,1) !important;	
+}
+
+.footer{
+	color: white;
+	font-size:2.5vh;
+	text-align: center;
+	margin-top: 10vh;
+	opacity: 0.9;
+	position: relative;
+	z-index: 5;
+}
+
+.github{
+	color: white;
+}
+
+.github:hover{
+	color: white;
+	text-decoration: none;
+
+}
+
+.navbar a:hover{
+	color: white;
+	text-decoration: none;
 }

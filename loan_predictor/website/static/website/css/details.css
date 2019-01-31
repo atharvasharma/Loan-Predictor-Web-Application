@@ -18,3 +18,40 @@
 	text-align: center;
 	margin-top: 5vh;
 }
+
+input{
+	width: 100%;
+}
+
+.submit{
+	width: 20%;
+	text-align: center;
+
+}
+
+.submit:hover{
+	color: white;
+	background:rgb(17,42,81);
+	border-radius: 5px;
+}
+
+.submit-div{
+	text-align: center;
+	margin-top: 3vh;
+}
+
+label{
+	font-weight: bold;
+	font-size: 1.9vh;
+	transition: all .2s ease-in-out;
+}
+label:hover{
+	font-weight: bold;
+	-webkit-transform: scale(1.1); 
+}
+
+form{
+	margin-top: 3vh;
+	padding: 2%;
+	
+}

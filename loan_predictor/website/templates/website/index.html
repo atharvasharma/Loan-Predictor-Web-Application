@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
         <style type="text/css">
             html, body {
                 background: rgba(0,0,0,0);
@@ -104,8 +105,16 @@
                     </div> 
                 </div>
             </div>
+        </div>
+        <div class="get-started">
+            <a href="{% url 'details' %}">
+                <button type="button" class="btn btn-outline-light">Get Started</button>
+            </a>
         </div>           
-
+        <div class="footer">
+            Liked our product??? Find us on Github:<br>
+            <a href="https://www.github.com/atharvasharma" class="github">Atharva Sharma</a> | Harsh Kumbhat | Saransh Bankiwal
+        </div>
         <!-- script for background and pointer -->
         <script src="{% static 'website/js/sketch.js' %}"></script>
         <script>
