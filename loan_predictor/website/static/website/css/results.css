@@ -1,0 +1,96 @@
+.navbar-rest{
+  background: rgba(17, 42, 81,1);
+}
+
+.nav-link{
+  color: white;
+}
+
+.navbar-brand{
+  color: white;
+}
+
+
+
+
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid rgb(17, 42, 81);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+#loader-heading{
+  position: absolute;
+  top:40%;
+  left:48%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+  color: rgb(17,42,81);
+  animation:blinkingText 1s infinite;
+}
+
+
+@keyframes blinkingText{
+    0%{     color: rgb(17,42,81);}
+    20%{     color: rgba(17,42,81,0.4);}
+    40%{     color: rgba(17,42,81,0.2);}
+    60%{     color: rgba(17,42,81,0.2);}
+    80%{     color: rgba(17,42,81,0.4);}
+    100%{     color: rgb(17,42,81);}
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#mydiv{
+  display: none;
+}
+
+.heading{
+  font-weight: 500;
+  text-align: center;
+  font-size:2rem;
+  margin-top: 8vh;
+}
+
+.bank-name{
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+.bank-1{
+  margin-top: 7vh;
+}
+
+.yes-no{
+  font-size: 1.5rem;
+
+}
+
+.no-icon{
+  color: red;
+}
+
+.yes-icon{
+  color: green;
+}

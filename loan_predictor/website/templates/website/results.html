@@ -1,0 +1,134 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'website/css/results.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body onload="myFunction()" style="margin:0">
+
+
+	<div id="loader" >
+	</div>
+	<div id="loader-heading"><h2>Predicting....</h2></div>
+
+	<div style="display: none;" id="myDiv">
+		<nav class="navbar navbar-expand-lg navbar-rest animated fadeIn ">
+          
+        	&nbsp; 
+	        <a class="navbar-brand" href="{% url 'index' %}">
+	        	Loan Predictor
+	        </a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+
+	        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	            <ul class="navbar-nav ml-auto">
+	                  <li class="nav-item ">
+	                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+	                  </li>
+	                  <li class="nav-item">
+	                    <a class="nav-link" href="{% url 'details' %}">Predict</a>
+	                  </li>
+	                  <li class="nav-item">
+	                    <a class="nav-link" href="#">Link</a>
+	                  </li>
+	                  <li class="nav-item">
+	                    <a class="nav-link" href="#">Link</a>
+	                  </li>
+	            </ul>
+	                  
+	         </div>
+    	</nav>
+
+
+
+
+    	<div class="container animated fadeIn">
+    		<div class="heading">
+    			Here are your results
+    		</div>
+    		<div class="bank-1 row">
+    			<div class="bank-name col-lg-4">Bank 1</div>
+				<div class="result col-lg-8">
+					{% ifequal mypred1 0 %}
+						<p class="yes-no yes-icon"><i class="far fa-check-circle "></i>&nbsp;Congrats, you will get a loan from Bank 1</p>
+					{% else %}
+						<p class="yes-no no-icon"><i class="far fa-times-circle "></i>&nbsp;Sorry, you won't get a loan from Bank 1</p>
+					{% endifequal %}
+				</div>
+			</div>
+			<div class="bank-2 row">
+    			<div class="bank-name col-lg-4">Bank 2</div>
+				<div class="result col-lg-8">
+					{% ifequal mypred2 0 %}
+						<p class="yes-no yes-icon"><i class="far fa-check-circle "></i>&nbsp;Congrats, you will get a loan from Bank 2</p>
+					{% else %}
+						<p class="yes-no no-icon"><i class="far fa-times-circle "></i>&nbsp;Sorry, you won't get a loan from Bank 2</p>
+					{% endifequal %}
+				</div>
+			</div>
+			<div class="bank-3 row">
+    			<div class="bank-name col-lg-4">Bank 3</div>
+				<div class="result col-lg-8">
+					{% ifequal mypred3 0 %}
+						<p class="yes-no yes-icon"><i class="far fa-check-circle "></i>&nbsp;Congrats, you will get a loan from Bank 3</p>
+					{% else %}
+						<p class="yes-no no-icon"><i class="far fa-times-circle "></i>&nbsp;Sorry, you won't get a loan from Bank 3</p>
+					{% endifequal %}
+				</div>
+			</div>
+			<div class="bank-4 row">
+    			<div class="bank-name col-lg-4">Bank 4</div>
+				<div class="result col-lg-8">
+					{% ifequal mypred4 0 %}
+						<p class="yes-no yes-icon"><i class="far fa-check-circle "></i>&nbsp;Congrats, you will get a loan from Bank 4</p>
+					{% else %}
+						<p class="yes-no no-icon"><i class="far fa-times-circle "></i>&nbsp;Sorry, you won't get a loan from Bank 4</p>
+					{% endifequal %}
+				</div>
+			</div>
+			<div class="bank-5 row">
+    			<div class="bank-name col-lg-4">Bank 5</div>
+				<div class="result col-lg-8">
+					{% ifequal mypred5 0 %}
+						<p class="yes-no yes-icon"><i class="far fa-check-circle "></i>&nbsp;Congrats, you will get a loan from Bank 5</p>
+					{% else %}
+						<p class="yes-no no-icon"><i class="far fa-times-circle "></i>&nbsp;Sorry, you won't get a loan from Bank 5</p>
+					{% endifequal %}
+				</div>
+			</div>
+			<div class="bank-3 row">
+    			<div class="bank-name col-lg-4">Bank 6</div>
+				<div class="result col-lg-8">
+					{% ifequal mypred6 0 %}
+						<p class="yes-no yes-icon"><i class="far fa-check-circle "></i>&nbsp;Congrats, you will get a loan from Bank 6</p>
+					{% else %}
+						<p class="yes-no no-icon"><i class="far fa-times-circle "></i>&nbsp;Sorry, you won't get a loan from Bank 6</p>
+					{% endifequal %}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("loader-heading").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</html>
