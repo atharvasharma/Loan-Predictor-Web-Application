@@ -1,0 +1,212 @@
+.navbar-rest{
+	background: rgba(17, 42, 81,1);
+}
+
+.nav-link{
+	color: white;
+}
+
+.navbar-brand{
+	color: white;
+}
+
+.form-container{
+	margin-top: 3vh;
+}
+
+.heading{
+	text-align: center;
+	font-size: 4vh;
+	color:rgb(17,42,81);
+}
+.heading-container{
+	margin-top: 5vh;
+	text-align: center;
+}
+
+.subheading{
+	font-size: 1.5rem;
+}
+input{
+	-webkit-appearance: none;
+    width: 35%;
+    border: 0;
+    font-family: inherit;
+    
+    height: 40px;
+    font-size: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #C8CCD4;
+    background: none;
+    border-radius: 0;
+    color: #223254;
+
+
+}
+
+.input-div{
+	padding-left: 70px;
+	margin-top:10px;
+	text-align: center;
+}	
+
+.submit{
+	width: 100%;
+	text-align: center;
+	-webkit-appearance: none;
+    
+    border-bottom: 0;
+    font-family: inherit;
+    
+    height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+.submit:hover{
+	color:white !important;
+}
+
+
+
+.submit-div{
+	text-align: center;
+	margin-top: 3vh;
+}
+
+label{
+	font-weight: bold;
+	font-size: 1.9vh;
+	transition: all .2s ease-in-out;
+}
+label:hover{
+	font-weight: bold;
+	-webkit-transform: scale(1.1); 
+}
+
+
+/* slider */
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 130%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(17,42,81,0.8);
+  color: white !important;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+ 
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active{
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade-effect {
+  -webkit-animation-name: fade !important;
+  -webkit-animation-duration: 2s !important;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .2}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .2}
+  to {opacity: 1}
+}
+
+
+.question{
+	padding-left: 70px;
+	font-size: 1.5rem;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.hidden-label{
+	display: none;
+}
+
+.question{
+	
+	font-weight: 500;
+	transition: all .3s ease-in-out;
+}
+.question:hover{
+	font-weight: bold;
+	-webkit-transform: scale(1.1); 
+}
+
+.form-container{
+	border-top:2px solid blue;
+}

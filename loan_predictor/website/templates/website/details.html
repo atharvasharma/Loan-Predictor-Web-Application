@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fill your details</title>
+	<link rel="stylesheet" href="{% static 'website/css/details.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-rest">
+          
+        &nbsp; 
+        <a class="navbar-brand" href="{% url 'index' %}">
+        	<i class="fas fa-chart-pie"></i>  Loan Predictor
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'details' %}">Predict</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+            </ul>
+                  
+        </div>
+    </nav>
+    <div class="container heading-container">
+		<span class="heading animated fadeIn">Hey,</span>
+		<div class="subheading animated fadeIn">Enter your details here to get the results</div>
+	</div>	
+	<div class="container form-container">
+		<form action="details" method="post">
+			{% csrf_token %}
+	    	<div class="slideshow-container">
+		  		<div class="mySlides fade-effect" id="myslide1">
+	    		
+		    		<div class="question">What's your age?</div>
+		    		<label for="Age" class="hidden-label">Age of borrower in years</label>
+					<div class="input-div">{{form.Age}}</div>
+
+					<div class="question">What's the balance on your credit card?</div>
+			   		<label for="RevolvingUtilizationOfUnsecuredLines" class="hidden-label"></label>
+					<div class="input-div">{{form.RevolvingUtilizationOfUnsecuredLines}}</div>
+
+					<div class="question">How many times have you been 30-59 days past due in last 2 years??</div>
+			   		<label for="NumberOfTime30to59DaysPastDueNotWorse" class="hidden-label"></label>
+			    	<div class="input-div">{{form.NumberOfTime30to59DaysPastDueNotWorse}}</div>
+	  			</div>
+
+			  	<div class="mySlides fade-effect" id="myslide2">
+			    
+				    <div class="question">What's your monthly income?</div>
+			    	<label for="MonthlyIncome" class="hidden-label">Monthly Income</label>
+				    <div class="input-div">{{form.MonthlyIncome}}</div>
+
+					<div class="question">Number of open loans you currently owe </div>
+				   	<label for="NumberOfOpenCreditLinesAndLoans" class="hidden-label"></label>
+				   	<div class="input-div">{{form.NumberOfOpenCreditLinesAndLoans}}</div>
+
+					<div class="question">How many times have you been 90 days past due? </div>
+				   	<label for="NumberOfTimes90DaysLate" class="hidden-label">Number of times borrower has been 90 days or more past due.</label>
+					<div class="input-div">{{form.NumberOfTimes90DaysLate}}</div>
+						    	
+			  	</div>
+
+				<div class="mySlides fade-effect" id="myslide3">
+				    
+				    <div class="question">Number of mortgage and real estate loans</div>
+			    	<label for="NumberRealEstateLoansOrLines" class="hidden-label"></label>
+				   	<div class="input-div">{{form.NumberRealEstateLoansOrLines}}</div>
+
+					<div class="question">How many times have you been 60-89 days past due?? </div>
+				   	<label for="NumberOfTime60-89DaysPastDueNotWorse" class="hidden-label"></label>
+				   	<div class="input-div">{{form.NumberOfTime60to89DaysPastDueNotWorse}}</div>
+
+					<div class="question">Enter the number of dependents in your family (spouse, children etc.)</div>
+				   	<label for="NumberOfDependents" class="hidden-label">Number of dependents in family excluding themselves (spouse, children etc.)</label>
+					<div class="input-div">{{form.NumberOfDependents}}</div>
+						    	
+				</div>
+		  		<div class="mySlides fade-effect" id="myslide4">
+		    
+				    <div class="question">What's your debt ratio?</div>
+			    	<label for="DebtRatio" class="hidden-label">Monthly debt payments, alimony,living costs divided by monthy gross income</label>
+				   	<div class="input-div">{{form.DebtRatio}}</div>
+
+					<div class="next">
+				    	<input type="submit" value="Submit" class="submit"></input>
+				    </div>
+					
+		      	
+		  		</div>
+		  		<a class="prev fade-effect" onclick="plusSlides(-1)">Previous</a>
+		 		<a class="next fade-effect" onclick="plusSlides(1)" id="next-button">Next</a>
+		  	</div>
+		</form>
+		  
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<div style="text-align:center">
+		  <span class="dot"	></span>
+		  <span class="dot"	></span>
+		  <span class="dot"	></span>
+		  <span class="dot"	></span>
+	</div>
+</body>
+<script type="text/javascript">
+	var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+  console.log(slideIndex);
+  if(n>0){
+  	if(slideIndex=== 4){
+  		var x=document.getElementById("next-button");
+  		x.style.display="none";
+  	}	
+  	
+  }
+  else{
+  	if(slideIndex!=4){
+  		var x=document.getElementById("next-button");
+  		x.style.display="block";
+  	}
+  	else
+  	{
+  		var x=document.getElementById("next-button");
+  		x.style.display="none";
+  	}
+  }
+  
+ 
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+  	slideIndex = 1;
+  	
+  }
+
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+
+} 
+</script>
+</html>
+
+
