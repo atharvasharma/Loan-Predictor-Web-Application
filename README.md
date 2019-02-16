@@ -7,8 +7,19 @@ In the first phase the prediction part is completed and website is ready.
 For the future scope, we are planning to generate a full summary of the loan being taken by the customer telling him all necessary details like best interest rate, total amount to be paid and after how much time, collateral details etc.
 
 To run the website follow the below steps:
+1. Download and install DJANGO (Python Framework)
+2. Clone the repository.
+3. Run the Requirements.txt file and install all the dependencies.
+4. Navigate to the directory where manage.py file is present.
+5. Open your terminal in that directory and type the following command:
+          python manage.py runserver
+   This will run the server on your local PC
+6. Open your browser and paste the address given in your terminal window.
 
-1. Clone the repository.
-2. Run the Requirements.txt file.
+
+
+You can access the website now on your browser
+
+
 
 
