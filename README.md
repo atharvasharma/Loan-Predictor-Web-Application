@@ -18,7 +18,9 @@ To run the website follow the below steps:
 
 
 
-You can access the website now on your browser
+You can access the website now on your browser.
+
+Note: The website is not yet mobile ready, so please prefer higher resolutions for viewing the site.
 
 
 
