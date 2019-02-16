@@ -12,7 +12,7 @@ To run the website follow the below steps:
 3. Run the Requirements.txt file and install all the dependencies.
 4. Navigate to the directory where manage.py file is present.
 5. Open your terminal in that directory and type the following command:
-          python manage.py runserver
+         `python manage.py runserver`
    This will run the server on your local PC
 6. Open your browser and paste the address given in your terminal window.
 
