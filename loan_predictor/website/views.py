@@ -7,6 +7,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.externals import joblib
 import _pickle
+from mortgage import Loan
 #django
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -58,6 +59,8 @@ def details(request):
             NumberRealEstateLoansOrLines=form.cleaned_data['NumberRealEstateLoansOrLines']
             NumberOfTime60to89DaysPastDueNotWorse=form.cleaned_data['NumberOfTime60to89DaysPastDueNotWorse']
             NumberOfDependents=form.cleaned_data['NumberOfDependents']
+            Amount=form.cleaned_data['Amount']
+            Term=form.cleaned_data['Term']
             datas=[]
             datas.extend((
                 RevolvingUtilizationOfUnsecuredLines,
@@ -101,12 +104,31 @@ def details(request):
             #print(Age)
             #print(NumberOfTime30to59DaysPastDueNotWorse)
             #print(DebtRatio)
-            #print(MonthlyIncome)
+            #print(MonthlyIncome)load:
             #print(NumberOfOpenCreditLinesAndLoans)
             #print(NumberOfTimes90DaysLate)
             #print(NumberRealEstateLoansOrLines)
             #print(NumberOfTime60to89DaysPastDueNotWorse)
             #print(NumberOfDependents)
+            #print(Amount)
+            #print(Term)
+            TotalAmount1=Amount+Amount*Term*0.06            
+            Monthly1=(TotalAmount1/Term)/12
+
+            TotalAmount2=Amount+Amount*Term*0.07           
+            Monthly2=(TotalAmount1/Term)/12
+
+            TotalAmount3=Amount+Amount*Term*0.065           
+            Monthly3=(TotalAmount1/Term)/12
+
+            TotalAmount4=Amount+Amount*Term*0.075            
+            Monthly4=(TotalAmount1/Term)/12
+
+            TotalAmount5=Amount+Amount*Term*0.08           
+            Monthly5=(TotalAmount1/Term)/12
+
+            TotalAmount6=Amount+Amount*Term*0.05            
+            Monthly6=(TotalAmount1/Term)/12
             context={
                 'mypred1':mypred1,
                 'mypred2':mypred2,
@@ -114,6 +136,30 @@ def details(request):
                 'mypred4':mypred4,
                 'mypred5':mypred5,
                 'mypred6':mypred6,
+                'RevolvingUtilizationOfUnsecuredLines':RevolvingUtilizationOfUnsecuredLines,
+                'Age':Age,
+                'NumberOfTime30to59DaysPastDueNotWorse':NumberOfTime30to59DaysPastDueNotWorse,
+                'DebtRatio':DebtRatio,
+                'MonthlyIncome':MonthlyIncome,
+                'NumberOfOpenCreditLinesAndLoans':NumberOfOpenCreditLinesAndLoans,
+                'NumberOfTimes90DaysLate':NumberOfTimes90DaysLate,
+                'NumberRealEstateLoansOrLines':NumberRealEstateLoansOrLines,
+                'NumberOfTime60to89DaysPastDueNotWorse':NumberOfTime60to89DaysPastDueNotWorse,
+                'NumberOfDependents':NumberOfDependents,
+                'Amount':Amount,
+                'Term':Term,
+                'TotalAmount1':TotalAmount1,
+                'Monthly1':Monthly1,
+                'TotalAmount2':TotalAmount2,
+                'Monthly2':Monthly2,
+                'TotalAmount3':TotalAmount3,
+                'Monthly3':Monthly3,
+                'TotalAmount4':TotalAmount4,
+                'Monthly4':Monthly4,
+                'TotalAmount5':TotalAmount5,
+                'Monthly5':Monthly5,
+                'TotalAmount6':TotalAmount6,
+                'Monthly6':Monthly6,
             }
             
             return render(request,'website/results.html',context)

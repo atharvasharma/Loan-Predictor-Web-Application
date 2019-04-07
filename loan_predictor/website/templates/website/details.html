@@ -52,7 +52,7 @@
 		    		<label for="Age" class="hidden-label">Age of borrower in years</label>
 					<div class="input-div">{{form.Age}}</div>
 
-					<div class="question">What's the balance on your credit card?</div>
+					<div class="question">What's the balance on your credit card? <p class="descrip">(Divide it by sum of credit limits)</p></div>
 			   		<label for="RevolvingUtilizationOfUnsecuredLines" class="hidden-label"></label>
 					<div class="input-div">{{form.RevolvingUtilizationOfUnsecuredLines}}</div>
 
@@ -67,7 +67,7 @@
 			    	<label for="MonthlyIncome" class="hidden-label">Monthly Income</label>
 				    <div class="input-div">{{form.MonthlyIncome}}</div>
 
-					<div class="question">Number of open loans you currently owe </div>
+					<div class="question">Number of open loans you currently owe <p class="descrip">(Installment like car loan or mortgage and Lines of credit (e.g. credit cards)).</p></div>
 				   	<label for="NumberOfOpenCreditLinesAndLoans" class="hidden-label"></label>
 				   	<div class="input-div">{{form.NumberOfOpenCreditLinesAndLoans}}</div>
 
@@ -79,31 +79,39 @@
 
 				<div class="mySlides fade-effect" id="myslide3">
 				    
-				    <div class="question">Number of mortgage and real estate loans</div>
+				    <div class="question">Number of mortgage and real estate loans<p class="descrip">(including home equity lines of credit)</p></div>
 			    	<label for="NumberRealEstateLoansOrLines" class="hidden-label"></label>
 				   	<div class="input-div">{{form.NumberRealEstateLoansOrLines}}</div>
 
-					<div class="question">How many times have you been 60-89 days past due?? </div>
+					<div class="question">How many times have you been 60-89 days past due??<p class="descrip">(in last 2 years)</p></div>
 				   	<label for="NumberOfTime60-89DaysPastDueNotWorse" class="hidden-label"></label>
 				   	<div class="input-div">{{form.NumberOfTime60to89DaysPastDueNotWorse}}</div>
 
-					<div class="question">Enter the number of dependents in your family (spouse, children etc.)</div>
+					<div class="question">Enter the number of dependents in your family <p class="descrip">(excluding yourself)</p></div>
 				   	<label for="NumberOfDependents" class="hidden-label">Number of dependents in family excluding themselves (spouse, children etc.)</label>
 					<div class="input-div">{{form.NumberOfDependents}}</div>
 						    	
 				</div>
 		  		<div class="mySlides fade-effect" id="myslide4">
 		    
-				    <div class="question">What's your debt ratio?</div>
+				    <div class="question">What's your debt ratio?<p class="descrip">(Monthly debt payments, alimony,living costs divided by monthy gross income.)</p></div>
 			    	<label for="DebtRatio" class="hidden-label">Monthly debt payments, alimony,living costs divided by monthy gross income</label>
 				   	<div class="input-div">{{form.DebtRatio}}</div>
 
+				   	<div class="question">Enter loan amount</div>
+			    	<label for="DebtRatio" class="hidden-label">Monthly debt payments, alimony,living costs divided by monthy gross income</label>
+				   	<div class="input-div">{{form.Amount}}</div>
+
+				   	<div class="question">Enter pay back period</div>
+			    	<label for="DebtRatio" class="hidden-label">Monthly debt payments, alimony,living costs divided by monthy gross income</label>
+				   	<div class="input-div">{{form.Term}}</div>
 					<div class="next">
 				    	<input type="submit" value="Submit" class="submit"></input>
 				    </div>
 					
 		      	
 		  		</div>
+
 		  		<a class="prev fade-effect" onclick="plusSlides(-1)">Previous</a>
 		 		<a class="next fade-effect" onclick="plusSlides(1)" id="next-button">Next</a>
 		  	</div>

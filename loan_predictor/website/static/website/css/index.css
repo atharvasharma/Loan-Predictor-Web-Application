@@ -10,7 +10,9 @@
 	font-size: 3.7vh !important;
 }
 
-
+.flip-card{
+	pointer-events: none;
+}
 .navbar{
 	margin-top: 1.5vh;
 	margin-left: 2vw;
